@@ -3,7 +3,7 @@
   #include <avr/power.h>
 #endif
 
-#define PIN1 6
+#define PIN1 13
 #define PIN2 12
  int LED1=8;
  int LED2=9;
@@ -86,7 +86,7 @@ float durt[]=                   //根据简谱列出各节拍
   1+0.5,0.5,1+1,
 };
 int length;
-int tonepin=6;   //得用6号接口
+int tonepin=8;   //得用6号接口
 // Parameter 1 = number of pixels in strip1
 // Parameter 2 = Arduino pin number (most are valid)
 // Parameter 3 = pixel type flags, add together as needed:
