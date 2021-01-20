@@ -5,19 +5,10 @@
 
 int n;
 
-#define PIN1 13
+#define PIN1 13		/* RGB Leds */
 #define PIN2 12
 
-#define LED1 8
-#define LED2 9;
-#define LED3 10;
-#define LED4 11;
-#define LED7 2 ;
-#define LED8 3 ;
-#define LED9 4;
-#define LED10 5;
-#define LED11 6;
-#define LED12 7;
+/* NB  LEDs 2 - 11 */
 
 #define NTD0 -1
 #define NTD1 294
@@ -111,7 +102,7 @@ void setup() {
 	if(F_CPU == 16000000) clock_prescale_set(clock_div_1);
 #endif
 	// End of trinket special code
-	for(n=2;n<=13;n++)
+	for(n=2;n<12;n++)
 	{
 		pinMode(n, OUTPUT); 
 	}
@@ -165,12 +156,12 @@ void colorWipe(uint32_t c, uint8_t wait) {
 }
 void  turn1() // Sequentially lights up and turns off sequentially
 {
-	for(n=2;n<=13;n++)
+	for(n=2;n<12;n++)
 	{
 		digitalWrite(n,HIGH);
 		delay(300);
 	}
-	for(n=2;n<=13;n++)
+	for(n=2;n<12;n++)
 	{
 		digitalWrite(n,LOW);
 		delay(300);
@@ -180,12 +171,12 @@ void  turn2() // 6 lights flash 3 times
 {
 	for(int x=0;x<=2;x++)
 	{
-		for(n=2;n<=13;n++)
+		for(n=2;n<12;n++)
 		{
 			digitalWrite(n,HIGH); 
 		}
 		delay(300); 
-		for(n=2;n<=13;n++)
+		for(n=2;n<12;n++)
 		{
 			digitalWrite(n,LOW); 
 		}
@@ -215,7 +206,7 @@ void  turn3() // Two two flash together 3 times
 }
 void clean()
 {
-	for(n=2;n<=11;n++)
+	for(n=2;n<12;n++)
 	{
 		digitalWrite(n,LOW); 
 	}
